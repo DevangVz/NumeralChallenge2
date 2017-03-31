@@ -5,6 +5,7 @@
  */
 package numeralchallenge;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -14,7 +15,7 @@ import java.util.LinkedList;
 public class Number {
     String string;
     int limit;
-    LinkedList<Integer> values;
+    List<Integer> values;
     public Number(String tupla) throws ExceptionString{
          if(!tupla.matches("^\\[([0-9])+(,)([0-9])+\\]")){
             throw new ExceptionString("Are you even trying? Syntax [<<number>>,<<number>>] ");
@@ -22,10 +23,17 @@ public class Number {
         String[] alfa= tupla.substring(1, tupla.length()-1).split(",");
         string= alfa[0];
         limit= Integer.parseInt(alfa[1]);
-        if(limit>=string.length()&&limit>1)
+        if(limit>=string.length() )
             throw new ExceptionString("Yeaaaaah.... nope... Length for 2nd entry doesn't fit");
     }
-    public void setValues(){}
+    public void setValues(){
+        values=new ArrayList<Integer>();
+        for(int i=0; i <string.length()-limit+1;i++){
+            values.add(Integer.parseInt(string.substring(i, limit+i)));
+        }
+    }
     
-    
+    public void sorting(int v){
+        
+    }
 }

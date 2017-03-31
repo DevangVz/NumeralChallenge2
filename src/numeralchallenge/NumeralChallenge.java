@@ -19,8 +19,6 @@ public class NumeralChallenge {
      */
     public static void main(String[] args) {
         try {
-            // TODO code application logic here
-
             Number n = new Number("[344,3]");
         } catch (ExceptionString ex) {
             System.err.println(ex);
