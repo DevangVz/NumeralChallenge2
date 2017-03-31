@@ -26,26 +26,31 @@ public class Number {
         String[] alfa= tupla.substring(1, tupla.length()-1).split(",");
         string= alfa[0];
         limit= Integer.parseInt(alfa[1]);
+        
         if(limit>=string.length() )
             throw new ExceptionString("Yeaaaaah.... nope... Length for 2nd entry doesn't fit");
+        System.out.println("["+string+"]");
         setValues();
     }
     public void setValues(){
-        values=new ArrayList<Integer>();
+        values=new ArrayList<Integer>(); 
+        String setV="[ ";
         for(int i=0; i <string.length()-limit+1;i++){
+            setV+=string.substring(i, limit+i).concat(" ");
             values.add(Integer.parseInt(string.substring(i, limit+i)));
-            //System.out.println(values.size());
+             
         }
+        setV+="]";
+        System.out.println(setV);
         sorting();
     }
     
     public void sorting(){
         Collections.sort(values);
-        Iterator<Integer> a= values.iterator();
-        while(a.hasNext())
-            System.out.println(a.next());
-        
-
         System.out.println("Max:"+values.get(values.size()-1) +" Min:"+values.get(0));
     }
+    
+    
+    
+    
 }
