@@ -19,7 +19,7 @@ public class NumeralChallenge {
      */
     public static void main(String[] args) {
         try {
-            Number n = new Number("[344,3]");
+            Number n = new Number("[003256,3]");
         } catch (ExceptionString ex) {
             System.err.println(ex);
         }

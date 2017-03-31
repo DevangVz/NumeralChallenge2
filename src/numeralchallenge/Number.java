@@ -6,7 +6,10 @@
 package numeralchallenge;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -25,15 +28,24 @@ public class Number {
         limit= Integer.parseInt(alfa[1]);
         if(limit>=string.length() )
             throw new ExceptionString("Yeaaaaah.... nope... Length for 2nd entry doesn't fit");
+        setValues();
     }
     public void setValues(){
         values=new ArrayList<Integer>();
         for(int i=0; i <string.length()-limit+1;i++){
             values.add(Integer.parseInt(string.substring(i, limit+i)));
+            //System.out.println(values.size());
         }
+        sorting();
     }
     
-    public void sorting(int v){
+    public void sorting(){
+        Collections.sort(values);
+        Iterator<Integer> a= values.iterator();
+        while(a.hasNext())
+            System.out.println(a.next());
         
+
+        System.out.println("Max:"+values.get(values.size()-1) +" Min:"+values.get(0));
     }
 }
